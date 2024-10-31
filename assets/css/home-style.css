@@ -1,0 +1,694 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: rgba(51, 51, 51, 0.5);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    gap: 10px;
+}
+
+.header-text h1 {
+    white-space: nowrap;
+    font-size: 24;
+}
+
+.header-top h1, .header-top h2, .header-top p {
+    margin: 0; /* Reset default margins */
+}
+
+
+.header-logo img {
+    max-width: 60px; /* Adjust size as needed */
+    height: auto;
+    margin: 10px;
+}
+
+/* Styles for the home page */
+body.home-page header,
+body.home-page footer {
+    background: transparent; /* Clear background */
+    color: #333; /* Adjust text color if needed */
+    /* ... other styles ... */
+}
+
+body header,
+body footer {
+    background: #fff; /* White background */
+    color: #333; /* Adjust text color if needed */
+    /* ... other styles ... */
+}
+
+
+/* Navigation */
+nav {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    width: 55%;
+    align-items: center;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    gap: 55px; /* Creates space between navigation items */
+    padding: 0; /* Remove default padding */
+    margin: auto;
+    border-radius: 10px;
+}
+
+nav li a, nav li a:visited {
+    display: block;
+    text-align: center;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px; /* Increase font size */
+    white-space: nowrap;
+    border-radius: 10px;
+}
+
+nav li a:hover {background-color: white; color: black; border-radius: 10px;}
+
+/* Dropdown Menu */
+.dropbtn {
+    background: transparent;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    font-size: 16px;
+    border-radius: 10px; /* Rounded corners */
+    padding: 6px 12px;
+    display: inline-block;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline;
+    border-radius: 10px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 80px;
+    z-index: 1000;
+    transform: translateX(-4%);
+    top: 100%; /* Adjust this value as needed */
+    margin-top: -4px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+    display: block;
+    z-index: 1000;
+    left: 0;
+    top: 100%;
+  }
+
+  .dropdown-content a:hover {
+    color: black;
+    background-color: transparent;
+  }
+  
+  .dropdown:hover .dropdown-content {display: block; }
+  
+  .dropdown:hover .dropbtn {background-color: white; color: black; }
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background: rgba(51, 51, 51, 0.8); /* Slightly more opacity for readability */
+    color: #fff;
+    text-align: center;
+    position: relative; /* Ensures it's on top of the video */
+}
+
+.footer-top {
+    background-color: rgba(0, 0, 0, 0.6); /* Solid black background */
+        color: #fff; /* Adjust text color if needed, white is used for contrast */
+        text-align: center;
+        padding: 1rem;
+        margin-top: auto; /* Keeps the footer at the bottom */
+        position: relative; /* Ensures it's on top of other content */
+    
+        /* Additional styles for aesthetic */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: Adds a subtle shadow for depth */
+
+}
+
+.footer-logo img {
+    max-width: 100px; /* Adjust size as needed */
+    height: auto;
+    padding: 20px;
+}
+
+
+.lightgallery a img {
+    width: 200px;  /* Adjust the width as needed */
+    height: auto;  /* Maintain the aspect ratio */
+    margin: 5px;   /* Optional: Adds some space around thumbnails */
+    border: 1px solid #ccc; /* Optional: Adds a border to thumbnails */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for depth */
+}
+
+.lightgallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left; /* Center the gallery items */
+    align-items: flex-start; /* Align items to the start of the cross axis */
+    padding-left: 15px; /* Remove left padding if it's not needed */
+}
+
+/* Gallery Image Captions */
+.lightgallery .caption {
+    color: #fff; /* White text for captions */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+    /* Other caption styles... */
+}
+
+/* Data-Sub-HTML (LightGallery) */
+/* This assumes LightGallery injects the HTML into the DOM */
+.lightgallery .lg-sub-html h2, .lightgallery .lg-sub-html h4 {
+    color: #fff; /* White text for LightGallery captions */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+}
+
+.gallery-item {
+    margin: 5px;
+    text-align: center; /* Center the image and caption */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Align items to the center */
+}
+
+.gallery-item a, .gallery-item img {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 5px; /* Space between image and caption */
+    display: block;
+    margin: auto;
+}
+
+.caption {
+    font-size: 14px;
+    color: #333; /* Caption text color */
+    margin-top: 5px; /* Space between image and caption */
+}
+
+h2 {
+    font-size: 30px;
+    background-color: #fff;
+    text-align: center;
+    margin-bottom: 20px; /* Space between title and gallery items */
+}
+
+.review-item {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    text-align: left;
+}
+
+.review-title {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.review-text {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.review-rating {
+    font-size: 1em;
+    color: #e6ac00; /* Gold color for stars */
+    margin-bottom: 5px;
+}
+
+.review-author {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #333;
+}
+
+.cta-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold; /* Make it bold */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
+}
+
+
+.history-intro, .timeline, .historic-photos {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.history-intro h1, .timeline h2, .historic-photos h2 {
+    color: #333;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for headings */
+}
+
+/* Styling for the timeline content */
+.timeline p {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Text Overlay */
+.text-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 10px;
+    border-radius: 5px;
+    color: white; /* Ensure text is white for better contrast */
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px; /* Limit the width for better readability */
+    margin: 20px auto;
+}
+
+.enhanced-overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better readability */
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    margin: 10px; /* Add some margin around the text */
+}
+
+.enhanced-overlay h3, .enhanced-overlay p {
+    margin: 10px 0; /* Spacing between text elements */
+}
+
+.shadow-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adding shadow for depth */
+}
+
+#eventModal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#closeModal {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Company Introduction */
+.company-intro {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    margin: 20px;
+    border-radius: 5px;
+}
+
+/* Mission Statement */
+.mission-statement {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 20px;
+    border-radius: 5px;
+}
+
+/* Values Section */
+.values-section {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.values-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.values-section li {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* apply a natural box layout model to all elements */
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.lg-outer .lg-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.lg-outer .lg-img-wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Countdown title style */
+h5 {
+    text-align: center;
+    color: #000;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-info h3, .contact-form h3 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.contact-info p, .contact-form label {
+    margin-bottom: 10px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1000; /* Ensure it's behind other content */
+    overflow: visible;
+}
+ 
+ article h2 {
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px;
+ }
+ 
+ /* Custom Styles for Project Images */
+.project-image {
+    width: 100%;         /* Sets the width relative to the container */
+    max-width: 600px;    /* Maximum width of the images */
+    height: auto;        /* Maintains aspect ratio */
+    display: block;      /* Aligns image properly */
+    margin: 10px auto;   /* Centers image and adds margin around it */
+}
+
+/* Swiper Gallery */
+.swiper {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.swiper-slide {
+    text-align: center;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu img {
+    width: 30px;
+    height: auto;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+.dropdown-icon {
+    font-size: 8px; /* Adjust the size of the icon */
+    vertical-align: middle; /* Align icon with the middle of adjacent text */
+    margin-right: 5px; /* Space between icon and text, adjust as needed */
+    display: none;
+}
+
+.icon-down {
+    /* Style for down arrow */
+    background-image: url('down.png');
+    display: none;
+}
+
+.icon-up {
+    /* Style for up arrow */
+    background-image: url('up.png');
+    display: none;
+}
+
+.dropdown-content-about, .dropdown-content-projects {
+    display: none;
+}
+
+.dropdown-icon {
+    display: none;
+    vertical-align: middle;
+    margin-left: 5px; /* Adjust as needed */
+}
+
+
+/* Mobile view */
+@media (max-width: 900px) {
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        margin: 20px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .hamburger-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .header-top {
+        justify-content: center;
+    }
+    
+    .header-text h1 {
+        display: none;
+    }
+
+    .header-logo {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hidden initially */
+        width: 25%;
+        height: 100vh;
+        background: rgba(51, 51, 51, 0.95);
+        z-index: 1000;
+        flex-direction: column;
+        padding-top: 60px; /* Space for the close button */
+        transition: left 0.3s ease;
+        border-radius: 0px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 100px;
+        margin-top: 20px;
+        align-items: flex-start;
+    }
+
+    nav li a {
+        padding: 15px;
+        color: #fff;
+        font-size: 25px;
+    }
+
+    nav.visible {
+        left: 0; /* Shows the menu */
+    }
+
+    .dropbtn {
+        font-size: 25px;
+        text-align: left;
+    }
+
+    
+
+    .dropdown-content {
+        left: 0; /* Align with the start of the dropdown button */
+        text-align: left; /* Align text to the left */
+        padding-left: 15px;
+        display: none;
+        position: absolute; 
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    /* Hover state of dropdown links */
+    .dropdown-content a:hover {
+        color: white; /* Change color on hover */
+        background-color: transparent; /* Keep background transparent */
+        text-align: left;
+    }
+
+    /* Active/tapped state of dropdown links */
+    .dropdown-content a:active {
+        color: white; /* Darker color for active state */
+        background-color: transparent; /* Keep background transparent */
+        text-align: left;
+    }
+
+    .dropdown:hover .dropbtn {background-color: transparent; color: white; }
+
+    .dropdown-icon {
+        display: inline-block;
+        font-size: 8px; /* Adjust the size of the icon */
+        vertical-align: middle; /* Align icon with the middle of adjacent text */
+        margin-left: 5px; /* Space between icon and text, adjust as needed */
+    }
+
+      
+}
+
+@media (max-width: 500px) {
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hidden initially */
+        width: 40%;
+        height: 100vh;
+        background: rgba(51, 51, 51, 0.95);
+        z-index: 1000;
+        flex-direction: column;
+        justify-content: left;
+        padding-top: 60px; /* Space for the close button */
+        transition: left 0.3s ease;
+        border-radius: 0px;
+    }
+
+    nav li a {
+        padding: 15px;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .dropbtn {
+        font-size: 16px;
+      }
+}
+

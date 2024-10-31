@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <title>About - Crazy Hat Studios</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"/>
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-logo">
+              <a href="home.html">
+            <img src="logo.png" alt="logo"> </a>
+         </div>
+      <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" href="aboutus.html">About</a>
+                <div class="dropdown-content">
+                    <a href="history.html">History</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a class="dropbtn" href="projects.html">Projects</a>
+                <div class="dropdown-content">
+                    <a href="project1.html">Project 1</a>
+                </div>
+            </li>
+            <li><a href="contacts.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    </header>
+  <main>
+    <div class="aboutus">
+   <section class="aboutus-section">
+       <h3 class="">About Crazy Hat Studios</h3>
+       <p>textextextextextextextext</p>
+   </section>
+   <section>
+    <div class="swiper">
+     <div class="swiper-wrapper" id="lg-swipper">
+         <div class="swiper-slide">
+             <a href="home1.jpg">
+                 <img class="img-responsive" src="thumbnail1.jpg" />
+             </a>
+         </div>
+         <div class="swiper-slide">
+             <a href="home2.jpg">
+                 <img class="img-responsive" src="thumbnail2.jpg" />
+             </a>
+         </div>
+         <div class="swiper-slide">
+             <a href="home3.jpg">
+                 <img class="img-responsive" src="thumbnail3.jpg" />
+             </a>
+         </div>
+     </div>
+     <div class="swiper-pagination"></div>
+     <div class="swiper-button-prev"></div>
+     <div class="swiper-button-next"></div>
+   </div>
+  </section>
+   <section class="aboutus-section">
+       <h3>Our Mission</h3>
+       <p>texttexttexttexttexttexttext</p>
+   </section>
+
+   <section class="aboutus-section">
+       <h3>Our Values</h3>
+       <ul>
+           <li><strong>Value 1:</strong> texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</li>
+           <li><strong>Value 2:</strong> texttexttexttexttexttexttext</li>
+           <li><strong>Value 3:</strong> texttexttexttexttexttexttext</li>
+       </ul>
+   </section>
+   <section>
+    <div class="swiper">
+     <div class="swiper-wrapper" id="lg-swipper">
+         <div class="swiper-slide">
+             <a href="home1.jpg">
+                 <img class="img-responsive" src="thumbnail1.jpg" />
+             </a>
+         </div>
+         <div class="swiper-slide">
+             <a href="home2.jpg">
+                 <img class="img-responsive" src="thumbnail2.jpg" />
+             </a>
+         </div>
+         <div class="swiper-slide">
+             <a href="home3.jpg">
+                 <img class="img-responsive" src="thumbnail3.jpg" />
+             </a>
+         </div>
+     </div>
+     <div class="swiper-pagination"></div>
+     <div class="swiper-button-prev"></div>
+     <div class="swiper-button-next"></div>
+   </div>
+  </section>
+   <section class="team-intro">
+       <h3>About the Founder</h3>
+       <p>Russ Messer. The Man. The Myth. The Legend.</p>
+   </section>
+</div>
+</main>
+<footer>
+    <div class="footer-logo">
+<a href="https://www.instagram.com/crazy_hat_studios/" target="_blank">
+    <img src="instagram_logo.png" alt="Instagram">
+</a> 
+<a href="https://www.youtube.com/@CrazyHatStudios" target="_blank">
+    <img src="youtube_logo.png" alt="YouTube">
+</a></div>
+<div class="footer-top">
+Copyright © 2023 Crazy Hat Studios LLC. All rights reserved.
+</div>
+</footer>
+<script>
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+ 
+    const galleryElements = document.querySelectorAll('#lg-swipper .swiper-slide a');
+    const galleryItems = Array.from(galleryElements).map(anchor => ({
+        'src': anchor.getAttribute('href'),
+        'thumb': anchor.querySelector('img').src
+    }));
+ 
+    galleryElements.forEach(anchor => {
+        anchor.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default action
+            lightGallery(anchor, {
+                dynamic: true,
+                dynamicEl: galleryItems,
+                index: Array.from(galleryElements).indexOf(anchor) // Start gallery at the index of the clicked slide
+            });
+        });
+    });
+ </script>
+</body>
+</html>
