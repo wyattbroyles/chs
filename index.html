@@ -7,12 +7,12 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
    <link rel="stylesheet" href="assets/css/home-style.css" />
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src= "components/Vide-0.5.1\dist\jquery.vide.min.js"></script>
+    <script src= "components/Vide-0.5.1/dist/jquery.vide.min.js"></script>
 </head>
 <body class="home-page">
     <div id="video-background"></div>
     <div class="hamburger-menu">
-        <img src="assets/images/hamburger-icon.png" alt="Menu"> <!-- Use an appropriate icon -->
+        <img src="assets/images/hamburger-icon.png" alt="Menu">
     </div>
    <header>
       <div class="header-top">
@@ -45,7 +45,7 @@
   </header>
   <script>
     $(document).ready(function() {
-              $('#video-background').vide('assets/videos/backgroundvid.mp4', {
+              $('#video-background').vide("assets/videos/backgroundvid", {
                   
               });
           }); 
