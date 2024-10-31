@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <title>Crazy Hat Studios</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <link rel="stylesheet" href="home-style.css" />
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src= "Vide-0.5.1\dist\jquery.vide.min.js"></script>
+</head>
+<body class="home-page">
+    <div id="video-background"></div>
+    <div class="hamburger-menu">
+        <img src="hamburger-icon.png" alt="Menu"> <!-- Use an appropriate icon -->
+    </div>
+   <header>
+      <div class="header-top">
+      <div class="header-logo">
+        <a href="index.html">
+      <img src="logo.png" alt="logo"> </a>
+   </div>
+   <div class="header-text">
+      <h1>Crazy Hat Studios</h1>
+   </div>
+    <nav>
+        <ul>
+            <li><a href="index.html"><strong>Home</strong></a></li>
+            <li class="dropdown dropdown-about">
+                <a class="dropbtn" href="aboutus.html"><strong>About</strong><span class="dropdown-icon"><img src="down.png"></span></a>
+                <div class="dropdown-content dropdown-content-about">
+                    <a href="history.html"><strong>History</strong></a>
+                </div>
+            </li>
+            <li class="dropdown dropdown-projects">
+                <a class="dropbtn" href="projects.html"><strong>Projects</strong><span class="dropdown-icon"><img src="down.png"></span></a>
+                <div class="dropdown-content dropdown-content-projects">
+                    <a href="project1.html"><strong>Project 1</strong></a>
+                </div>
+            </li>
+            <li><a href="contacts.html"><strong>Contact Us</strong></a></li>
+        </ul>
+    </nav>
+</div>
+  </header>
+  <script>
+    $(document).ready(function() {
+              $('#video-background').vide('backgroundvid.mp4', {
+                  
+              });
+          }); 
+  </script>
+  <script>
+    $(document).ready(function() {
+        $('.hamburger-menu').click(function() {
+            $('nav').toggleClass('visible');
+        });
+    
+        $(document).click(function(event) {
+            if (!$(event.target).closest('.hamburger-menu, nav').length) {
+                $('nav').removeClass('visible');
+            }
+        });
+    });
+    </script>
+<footer>
+    <div class="footer-top">
+    Copyright © 2023 Crazy Hat Studios LLC. All rights reserved.
+</div>
+  </footer>
+</body>
+</html>
