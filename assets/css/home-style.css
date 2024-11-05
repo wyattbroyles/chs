@@ -89,13 +89,13 @@ nav li a, nav li a:visited {
     text-align: center;
     padding: 6px 12px;
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 16px; /* Increase font size */
     white-space: nowrap;
     border-radius: 10px;
 }
 
-nav li a:hover {background-color: white; color: black; border-radius: 10px;}
+nav li a:hover {background-color: rgb(99, 94, 94); color: white; border-radius: 10px;}
 
 /* Footer */
 footer {
