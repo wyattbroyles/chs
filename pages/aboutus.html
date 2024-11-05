@@ -7,6 +7,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"/>
    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
 </head>
@@ -23,79 +24,45 @@
             <li><a href="../index.html">Home</a></li>
             <li class="dropdown">
                 <a class="dropbtn" href="aboutus.html">About</a>
-                <div class="dropdown-content">
-                    <a href="history.html">History</a>
-                </div>
             </li>
             <li class="dropdown">
                 <a class="dropbtn" href="projects.html">Projects</a>
-                <div class="dropdown-content">
-                    <a href="project1.html">Project 1</a>
-                </div>
             </li>
             <li><a href="contacts.html">Contact Us</a></li>
         </ul>
     </nav>
+    <div class="hamburger-menu">
+        <img src="../assets/images/hamburger-icon.png" alt="Menu">
+    </div>
     </header>
-  <main>
     <div class="aboutus">
    <section class="aboutus-section">
-       <h3 class="">About Crazy Hat Studios</h3>
-       <p>textextextextextextextext</p>
+       <h3>About Crazy Hat Studios</h3>
+       <br>
+       <p>Founded by Russ Messer, Crazy Hat Studios is a film studio focused on high-quality storytelling through camera work, production, directing, and writing. Known for unique visuals and compelling narratives, the studio brings stories to life with cinematic flair.</p>
    </section>
-   <section>
-    <div class="swiper">
-     <div class="swiper-wrapper" id="lg-swipper">
-         <div class="swiper-slide">
-             <a href="../assets/images/home1.jpg">
-                 <img class="img-responsive" src="../assets/images/thumbnail1.jpg" />
-             </a>
-         </div>
-         <div class="swiper-slide">
-             <a href="../assets/images/home2.jpg">
-                 <img class="img-responsive" src="../assets/images/thumbnail2.jpg" />
-             </a>
-         </div>
-         <div class="swiper-slide">
-             <a href="../assets/images/home3.jpg">
-                 <img class="img-responsive" src="../assets/images/thumbnail3.jpg" />
-             </a>
-         </div>
-     </div>
-     <div class="swiper-pagination"></div>
-     <div class="swiper-button-prev"></div>
-     <div class="swiper-button-next"></div>
-   </div>
-  </section>
    <section class="aboutus-section">
        <h3>Our Mission</h3>
-       <p>texttexttexttexttexttexttext</p>
+       <br>
+       <p>To captivate audiences with innovative, memorable films that set a new standard in independent filmmaking.</p>
    </section>
-
-   <section class="aboutus-section">
-       <h3>Our Values</h3>
-       <ul>
-           <li><strong>Value 1:</strong> texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</li>
-           <li><strong>Value 2:</strong> texttexttexttexttexttexttext</li>
-           <li><strong>Value 3:</strong> texttexttexttexttexttexttext</li>
-       </ul>
-   </section>
+   </div>
    <section>
     <div class="swiper">
      <div class="swiper-wrapper" id="lg-swipper">
          <div class="swiper-slide">
-             <a href="../assets/images/home1.jpg">
-                 <img class="img-responsive" src="../assets/images/thumbnail1.jpg" />
+             <a href="../assets/images/russ-with-camera.png">
+                 <img class="img-responsive" src="../assets/images/russ-with-camera.png" />
              </a>
          </div>
          <div class="swiper-slide">
-             <a href="../assets/images/home2.jpg">
-                 <img class="img-responsive" src="../assets/images/thumbnail2.jpg" />
+             <a href="../assets/images/russ-working.png">
+                 <img class="img-responsive" src="../assets/images/russ-working.png" />
              </a>
          </div>
          <div class="swiper-slide">
-             <a href="../assets/images/home3.jpg">
-                 <img class="img-responsive" src="../assets/images/thumbnail3.jpg" />
+             <a href="../assets/images/russ66sign.png">
+                 <img class="img-responsive" src="../assets/images/russ66sign.png" />
              </a>
          </div>
      </div>
@@ -104,10 +71,14 @@
      <div class="swiper-button-next"></div>
    </div>
   </section>
-   <section class="team-intro">
+  <div class="aboutus">
+   <section class="aboutus-section">
        <h3>About the Founder</h3>
-       <p>Russ Messer. The Man. The Myth. The Legend.</p>
+       <br>
+       <p>Russ Messer is passionate about his craft with years of experience in lighting, writing, directing, and filming his personal projects. Russ is based in O'Fallon, Illinois and enjoys multiple hobbies including football, longboarding, basketball, and spending time with friends and family.</p>
    </section>
+<img src="../assets/images/russprofile.png" alt="Russ profile pic" class="img-russ-profile">
+<br>
 </div>
 </main>
 <footer>
@@ -149,6 +120,22 @@ Copyright © 2024 Crazy Hat Studios LLC. All rights reserved.
                 dynamicEl: galleryItems,
                 index: Array.from(galleryElements).indexOf(anchor) // Start gallery at the index of the clicked slide
             });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('nav');
+
+        hamburgerMenu.addEventListener('click', function() {
+            nav.classList.toggle('visible');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!nav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                nav.classList.remove('visible');
+            }
         });
     });
  </script>

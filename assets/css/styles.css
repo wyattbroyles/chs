@@ -1,3 +1,13 @@
+/* CSS Variables */
+:root {
+    --primary-bg: rgba(51, 51, 51, 0.8);
+    --transparent-bg: rgba(0, 0, 0, 0.6);
+    --primary-text: #333;
+    --white: #fff;
+    --border-radius: 10px;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* Basic Reset */
 * {
     margin: 0;
@@ -5,65 +15,44 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-}
-
+/* Base Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    overflow: auto;
-    color: #333;
+    color: var(--primary-text);
 }
 
-/* Header */
+/* Header & Navigation */
 header {
-    background: rgba(51, 51, 51, 0.5);
-    color: #fff;
+    background: var(--primary-bg);
+    color: var(--white);
     text-align: center;
     position: relative;
-    overflow: visible;
 }
 
 .header-top {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 0rem;
+    padding: 0.5rem;
     gap: 10px;
 }
 
-.header-text h1 {
-    white-space: nowrap;
-    font-size: 24;
-}
-
-.header-top h1, .header-top h2, .header-top p {
-    margin: 0; /* Reset default margins */
-}
-
-
 .header-logo img {
-    max-width: 60px; /* Adjust size as needed */
+    max-width: 60px;
     height: auto;
     margin: 10px;
 }
 
 nav {
-    margin-top: 0;
     display: flex;
     justify-content: center;
     width: 90%;
     align-items: center;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 nav ul {
@@ -71,11 +60,8 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: visible;
-    gap: 55px; /* Creates space between navigation items */
-    padding: 0; /* Remove default padding */
+    gap: 55px;
     margin: auto;
-    border-radius: 10px;
 }
 
 nav li a, nav li a:visited {
@@ -83,621 +69,443 @@ nav li a, nav li a:visited {
     text-align: center;
     padding: 6px 12px;
     text-decoration: none;
-    color: white;
-    font-size: 16px; /* Increase font size */
-    white-space: nowrap;
-    border-radius: 10px;
+    color: var(--white);
+    font-size: 16px;
+    border-radius: var(--border-radius);
 }
 
-nav li a:hover {background-color: white; color: black; border-radius: 10px;}
-
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-    .header-top {
-        justify-content: center; /* Center items on smaller screens if desired */
-        padding-left: 0; /* Remove left padding on smaller screens */
-    }
-
-    .header-logo, .header-text {
-        width: 100%;
-    }
-
-    .header-logo img {
-        width: 100%;
-    }
-
-    nav {
-        margin-top: 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        white-space: nowrap;
-    }
-
-    .header-text h1 {
-        font-size: 18px; /* Smaller font size for small screens */
-        white-space: normal; /* Allow wrapping on small screens if needed */
-    }
+nav li a:hover {
+    background-color: var(--white);
+    color: var(--primary-text);
 }
-/* Dropdown Menu */
-.dropbtn {
-    background: transparent;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    font-size: 16px;
-    border-radius: 10px; /* Rounded corners */
-    padding: 6px 12px;
-    display: inline-block;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline;
-    align-items:center;
-    border-radius: 10px;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: transparent;
-    z-index: 1000;
-    transform: translateX(-5%);
-    top: 100%;
-    margin-top: -4px;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-    display: block;
-    z-index: 1000;
-  }
 
-  .dropdown-content a:hover {
-    color: black;
-    background-color: transparent;
-  }
-  
-  .dropdown:hover .dropdown-content {display: block; }
-  
-  .dropdown:hover .dropbtn {background-color: white; color: black; }
 
 /* Footer */
 footer {
     margin-top: auto;
-    background: rgba(51, 51, 51, 0.8); /* Slightly more opacity for readability */
-    color: #fff;
+    background: var(--primary-bg);
+    color: var(--white);
     text-align: center;
     padding: 1rem;
 }
 
-.footer-top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    gap: 10px;
-}
-
 .footer-logo img {
-    max-width: 65px; /* Adjust size as needed */
+    max-width: 65px;
     height: auto;
     padding: 10px;
 }
 
-
-.lightgallery a img {
-    width: 200px;  /* Adjust the width as needed */
-    height: auto;  /* Maintain the aspect ratio */
-    margin: 5px;   /* Optional: Adds some space around thumbnails */
-    border: 1px solid #ccc; /* Optional: Adds a border to thumbnails */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for depth */
-}
-
+/* Gallery */
 .lightgallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left; /* Center the gallery items */
-    align-items: flex-start; /* Align items to the start of the cross axis */
-    padding-left: 15px; /* Remove left padding if it's not needed */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
 }
 
-/* Gallery Image Captions */
-.lightgallery .caption {
-    color: #fff; /* White text for captions */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
-    /* Other caption styles... */
-}
-
-/* Data-Sub-HTML (LightGallery) */
-/* This assumes LightGallery injects the HTML into the DOM */
-.lightgallery .lg-sub-html h2, .lightgallery .lg-sub-html h4 {
-    color: #fff; /* White text for LightGallery captions */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
-}
-
-.gallery-item {
-    margin: 5px;
-    text-align: center; /* Center the image and caption */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Align items to the center */
-}
-
-.gallery-item a, .gallery-item img {
-    width: 200px; /* Adjust as needed */
+.lightgallery a img {
+    width: 600px;
     height: auto;
-    margin-bottom: 5px; /* Space between image and caption */
-    display: block;
-    margin: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
 }
 
-.caption {
-    font-size: 14px;
-    color: #333; /* Caption text color */
-    margin-top: 5px; /* Space between image and caption */
-}
-
-h2 {
-    font-size: 30px;
-    background-color: #fff;
-    text-align: center;
-    margin-bottom: 20px; /* Space between title and gallery items */
-}
-
-.review-item {
-    padding: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    text-align: left;
-}
-
-.review-title {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.review-text {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.review-rating {
-    font-size: 1em;
-    color: #e6ac00; /* Gold color for stars */
-    margin-bottom: 5px;
-}
-
-.review-author {
-    font-size: 0.9em;
-    font-style: italic;
-    color: #333;
-}
-
-.review-date {
-    font-size: 0.8em;
-    color: #999;
-}
-
-.main {
-    padding: 20px;
-}
-
-.welcome-section, .featured-tours, .cta-section {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.tour {
-    background: #f4f4f4;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px; /* Optional: Adds rounded corners */
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold; /* Make it bold */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
-}
-
-/* Text Overlay */
-.text-overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    padding: 10px;
-    border-radius: 5px;
-    color: white; /* Ensure text is white for better contrast */
-}
-
-main {
-    padding: 20px;
-    max-width: 1200px; /* Limit the width for better readability */
-    margin: 20px auto;
-}
-
-.enhanced-overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better readability */
-    padding: 15px;
-    border-radius: 8px;
-    color: #fff;
-    margin: 10px; /* Add some margin around the text */
-}
-
-.enhanced-overlay h3, .enhanced-overlay p {
-    margin: 10px 0; /* Spacing between text elements */
-}
-
-.shadow-text {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adding shadow for depth */
-}
-
-#eventModal {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-#closeModal {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    color: #333;
-}
-
-/* Company Introduction */
+/* About Us Section */
 .aboutus {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
-}
-.aboutus-section {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
-    margin: 30px;
-    border-radius: 5px;
-    color: black;
-    width: 1200px;
-    height: 400px;
-    text-align: auto;
 }
 
-@media (max-width: 1400px) {
-    .aboutus-section {
-        width: 90%; /* Adjust width on smaller screens */
-        /* Ensure it doesn't get too narrow on very small screens */
-        min-width: 300px;
-    }
+.aboutus-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 30px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  
 }
 
-.aboutus-section ul {
-    list-style: none;
-    padding-left: 0;
+.aboutus-section:hover {
+    transform: translateY(-5px);
 }
 
-.aboutus-section li {
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-/* apply a natural box layout model to all elements */
-* {
-   -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box;
-}
-
-.lg-outer .lg-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-}
-
-.lg-outer .lg-img-wrap {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Countdown title style */
-h5 {
-    text-align: center;
-    color: #000;
-    font-size: 2em;
+.section-title {
+    font-size: 2.5em;
+    color: var(--primary-text);
     margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.contact-section {
-    display: flex;
-    justify-content: center;
+.section-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
 }
 
+/* Contact Section */
 .contact-header {
-    display: inline;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Roboto', sans-serif; /* The font you chose */
-    font-size: 40px; /* Big size */
-    font-weight: 700; /* Bold */
-    color: white; /* Choose a color */
-    margin-bottom: 20px; /* Space below the header */
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin: 40px 0;
+    color: var(--primary-text);
+    position: relative;
+    padding-bottom: 15px;
 }
 
+/* Social Media Blocks */
 .contact-social-media-blocks {
     display: flex;
-    justify-content: center; /* Center the blocks */
-    align-items: center;
-    gap: 30px; /* Space between blocks */
-    margin-top: 30px; /* Space above the block container */
-    margin-bottom: 30px
+    justify-content: center;
+    gap: 40px;
+    margin: 50px 0;
+    padding: 0 20px;
 }
 
 .contact-social-media {
-    background-color: #444; /* Slightly lighter for a less dull look */
-    color: white;
-    width: 300px; /* Increased width for rectangular shape */
-    height: 200px; /* Adjust height for rectangular shape */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px; /* Larger radius for softer corners */
-    padding: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
-    transition: all 0.3s ease;
-
-    /* Add a gradient or pattern background for a less dull appearance */
     background: linear-gradient(145deg, #565656, #333333);
+    width: 250px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .contact-social-media:hover {
-    transform: translateY(-10px); /* Slightly enlarges block on hover */
-    background: linear-gradient(145deg, #676767, #444444); /* Lighter gradient on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .contact-social-media a {
-    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
-    font-size: 18px; /* Larger font size */
+    color: var(--white);
 }
 
 .contact-social-media img {
-    width: 100px; /* Slightly larger image */
-    height: auto;
-    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 
+.social-label {
+    font-size: 1.1em;
+    color: var(--white);
+    margin-top: 10px;
+}
+
+/* Contact Form Blocks */
 .contact-form-blocks-1 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 40px; /* Increase gap if needed */
-    background: url('contact-background.jpg') no-repeat center center;
-    background-size: cover; /* Ensures the image covers the entire block */
-    padding: 50px; /* Increase padding for larger size */
-    border-radius: 15px; /* Larger radius for softer corners */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
-    margin: auto;
-    margin-top: 50px;
-    width: 200%; /* Larger width */
-    width: 1200px; /* Maximum width */
-    /* Add height if necessary to make the block larger */
-    height: 250px; /* Example height */
-    text-decoration: none;
-    align-items:center;
-}
-
-.contact-form-blocks-3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px; /* Increase gap if needed */
-    background: url('question.jpg') no-repeat center center;
-    background-size: cover; /* Ensures the image covers the entire block */
-    padding: 50px; /* Increase padding for larger size */
-    border-radius: 15px; /* Larger radius for softer corners */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
-    margin: auto;
-    margin-top: 50px;
-    width: 200%; /* Larger width */
-    width: 1200px; /* Maximum width */
-    /* Add height if necessary to make the block larger */
-    height: 250px; /* Example height */
-    text-decoration: none;
-    align-items:center;
+    align-items: center;
+    margin: 50px 0;
 }
 
 .contact-form-blocks-2 {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
-
+    gap: 40px;
+    margin-top: 30px;
 }
-
 
 .contact-form {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    text-decoration: none;
     padding: 20px;
-    color: black;
     border-radius: 10px;
-    cursor: pointer;
-    height: 90px;
-    width: 110px;
-    text-wrap: none;
     transition: all 0.3s ease;
-    text-decoration: none; /* Remove link underline */
 }
 
 .contact-form:hover {
-    background-color: rgba(255, 255, 255, 1); /* Solid white on hover */
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-#video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1000; /* Ensure it's behind other content */
-    overflow: visible;
+.contact-form img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
 }
- 
- article h2 {
+
+.contact-label {
+    font-size: 1.1em;
+    color: var(--primary-text);
+    margin-top: 10px;
+}
+
+/* Images */
+.img-responsive {
+    max-width: 600px;
+}
+
+.img-russ-profile {
+    width: 500px;
+    height: 500px;
+}
+
+.img-russ-route66 {
+    width: 590px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Route 66 Image */
+.contact-image-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.img-russ-route66 {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.img-russ-route66:hover {
+    transform: scale(1.02);
+}
+
+/* Project Page Styles */
+
+.project {
+    margin: 30px auto;
+    width: 700px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project-title {
+    font-size: 30px;
     font-weight: bold;
-    font-size: 24px;
-    padding: 10px;
- }
- 
- /* Custom Styles for Project Images */
-.project-image {
-    width: 100%;         /* Sets the width relative to the container */
-    max-width: 600px;    /* Maximum width of the images */
-    height: auto;        /* Maintains aspect ratio */
-    display: block;      /* Aligns image properly */
-    margin: 10px auto;   /* Centers image and adds margin around it */
+    text-align: center;
+    margin: 30px 0;
+    color: var(--primary-text);
+}
+
+.project-description {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    line-height: 1.6;
+    color: var(--primary-text);
+}
+
+.project-contact-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--primary-bg);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #444;
+}
+
+/* Video Thumbnails */
+.video-thumbnail {
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+
+.video-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Swiper Gallery */
 .swiper {
     width: 100%;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 20px auto;  /* This centers the slideshow */
 }
 
 .swiper-slide {
     text-align: center;
-}
-
-.img-responsive {
-    max-width: 100%;
-    height: auto;
-}
-
-.gallery-container a {
-    width: 240px;
-    margin: 5px;
-  }
-  
-  .gallery-container a img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .lightgallery {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    align-items: center;
 }
 
-.video-thumbnail {
-    width: 200px; /* Adjust size as needed */
-    cursor: pointer;
-}
-
-.video-thumbnail a {
-    display: block;
-    overflow: hidden; /* Ensures the border-radius applies to images */
-}
-
-.video-thumbnail img {
-    width: 100%;
+.swiper-slide img {
+    max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;  /* Centers images within slides */
+}
+
+/* Optional: Style the navigation buttons and pagination */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-text);  /* Uses your theme color */
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary-text);  /* Uses your theme color */
+}
+
+/* Founder Section */
+.founder-section {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.founder-content {
+    flex: 1;
+}
+
+.founder-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-russ-profile {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
-.video-thumbnail:hover img {
-    transform: scale(1.05); /* Slightly enlarges the image on hover */
+/* Update Swiper styles */
+.swiper {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-h7 {
-    text-align: center; /* Center the text */
-    font-size: 48px; /* Big size */
-    font-weight: bold; /* Make it bold */
-    color: #333; /* Dark color for contrast */
-    margin-top: 20px; /* Top margin for spacing */
-    margin-bottom: 20px; /* Bottom margin for spacing */
-    font-family: 'Arial', sans-serif; /* Stylish, readable font */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+.swiper-slide img {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+/* Hamburger Menu Icon */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
 }
 
-.project-description {
-    text-align: center; /* Center the text */
-    font-size: 18px; /* Comfortable reading size */
-    color: #666; /* Softer color for readability */
-    margin-top: 10px; /* Top margin for spacing */
-    margin-bottom: 10px; /* Bottom margin for spacing */
-    font-family: 'Arial', sans-serif; /* Consistent with header */
-    line-height: 1.6; /* Line height for better readability */
+.hamburger-menu img {
+    width: 30px;
+    height: auto;
 }
 
-.project-contact-section {
-    text-align: center; /* Center everything in this section */
-    padding: 40px; /* Spacing around the section */
-    background-color: #f4f4f4; /* Light background for the section */
-    border-radius: 8px; /* Rounded corners */
-    margin: 20px auto; /* Center the section with margin */
-    max-width: 600px; /* Maximum width of the section */
+@media (max-width: 900px) {
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        margin: 20px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .hamburger-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .header-top {
+        justify-content: center;
+    }
+    
+    .header-text h1 {
+        display: none;
+    }
+
+    .header-logo {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        background: rgba(51, 51, 51, 0.95);
+        z-index: 1000;
+        flex-direction: column;
+        padding-top: 60px;
+        transition: left 0.3s ease;
+        border-radius: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 100px;
+        margin-top: 20px;
+        align-items: flex-start;
+    }
+
+    nav li a {
+        padding: 15px;
+        color: #fff;
+        font-size: 25px;
+    }
+
+    nav.visible {
+        left: 0; /* Shows the menu */
+    } 
 }
 
-.project-contact-section h2 {
-    font-size: 30px; /* Larger font size for the header */
-    color: #333; /* Dark color for the header */
-    background-color: #f4f4f4;
-    margin-bottom: 30px; /* Spacing between the header and button */
+@media (max-width: 500px) {
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hidden initially */
+        width: 40%;
+        height: 100vh;
+        background: rgba(51, 51, 51, 0.95);
+        z-index: 1000;
+        flex-direction: column;
+        justify-content: left;
+        padding-top: 60px; /* Space for the close button */
+        transition: left 0.3s ease;
+        border-radius: 0px;
+    }
+
+    nav li a {
+        padding: 15px;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 70px;
+    }
 }
-
-.contact-button {
-    display: inline-block; /* Makes the link behave like a button */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    padding: 15px 30px; /* Padding inside the button */
-    border-radius: 5px; /* Rounded corners for the button */
-    text-decoration: none; /* Removes underline from the link */
-    font-size: 18px; /* Font size for the button */
-    font-weight: bold; /* Makes the text bold */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.contact-button:hover {
-    background-color: #0056b3; /* Darker shade on hover for button */
-}
-
-
-  
-
-

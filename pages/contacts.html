@@ -4,6 +4,7 @@
    <meta charset="utf-8" />
    <title>Contact Us - Crazy Hat Studios</title>
    <link rel="stylesheet" href="../assets/css/styles.css" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
@@ -17,60 +18,71 @@
             <li><a href="../index.html">Home</a></li>
             <li class="dropdown">
                 <a class="dropbtn" href="aboutus.html">About</a>
-                <div class="dropdown-content">
-                    <a href="history.html">History</a>
-                </div>
             </li>
             <li class="dropdown">
                 <a class="dropbtn" href="projects.html">Projects</a>
-                <div class="dropdown-content">
-                    <a href="project1.html">Project 1</a>
-                </div>
             </li>
             <li><a href="contacts.html">Contact Us</a></li>
         </ul>
     </nav>
+    <div class="hamburger-menu">
+        <img src="../assets/images/hamburger-icon.png" alt="Menu">
+    </div>
     </header>
   <main>
-    <h2><strong>Social Media</strong></h2>
-<div class="contact-social-media-blocks">
-    <div class="contact-social-media">
-        <a href="https://www.instagram.com/crazy_hat_studios/" target="_blank">
-            <img src="../assets/images/instagram_logo.png" alt="Instagram">
-        </a> 
-    </div>
-    <div class="contact-social-media">
-        <a href="https://www.youtube.com/@CrazyHatStudios" target="_blank">
-            <img src="../assets/images/youtube_logo.png" alt="YouTube">
-        </a>
-    </div>
-</div>
-            <h2>Contact Us</h2>
-            <section class="contact-section">
-            <p>If you have any questions or need further information, please feel free to contact us.
-            </p>
-        </section>
-<div class="contact-form-blocks-1">
-    <div class="contact-header">Interested in Working With Us?</div>
-    <div class="contact-form-blocks-2">
-        <a class="contact-form" href="tel:6182504979">
-            <img src="../assets/images/phone_icon.png"></a>
-        <a class="contact-form" href="mailto:crazyhatfilmstudios@gmail.com">
-            <img src="../assets/images/email_icon.png"></a>
+    <div class="contact-header">Check out more of our work!</div>
+    <div class="contact-social-media-blocks">
+        <div class="contact-social-media">
+            <a href="https://www.instagram.com/crazy_hat_studios/" target="_blank">
+                <img src="../assets/images/instagram_logo.png" alt="Instagram">
+                <span class="social-label">Follow us on Instagram</span>
+            </a> 
+        </div>
+        <div class="contact-social-media">
+            <a href="https://www.youtube.com/@CrazyHatStudios" target="_blank">
+                <img src="../assets/images/youtube_logo.png" alt="YouTube">
+                <span class="social-label">Subscribe on YouTube</span>
+            </a>
         </div>
     </div>
-    <div class="contact-form-blocks-3">
-        <div class="contact-header"><h3>Have Any Questions?</h3></div>
+
+    <div class="contact-image-container">
+        <img class="img-russ-route66" src="../assets/images/russ66sign.png" alt="Russ at Route 66">
+    </div>
+
+    <div class="contact-form-blocks-1">
+        <div class="contact-header">Interested in Working With Us?</div>
         <div class="contact-form-blocks-2">
-        <a class="contact-form" href="tel:6182504979">
-            <img src="../assets/images/phone_icon.png"></a>
-        <a class="contact-form" href="mailto:crazyhatfilmstudios@gmail.com">
-            <img src="../assets/images/email_icon.png"></a>
+            <a class="contact-form" href="tel:6182504979">
+                <img src="../assets/images/phone_icon.png" alt="Phone">
+                <span class="contact-label">Call Us</span>
+            </a>
+            <a class="contact-form" href="mailto:crazyhatfilmstudios@gmail.com">
+                <img src="../assets/images/email_icon.png" alt="Email">
+                <span class="contact-label">Email Us</span>
+            </a>
         </div>
     </div>
 </main>
 <footer>
 Copyright © 2024 Crazy Hat Studios LLC. All rights reserved.
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('nav');
+
+        hamburgerMenu.addEventListener('click', function() {
+            nav.classList.toggle('visible');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!nav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                nav.classList.remove('visible');
+            }
+        });
+    });
+</script>
 </body>
 </html>
